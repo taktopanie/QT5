@@ -8,6 +8,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+import Lista_portow
+
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -110,7 +113,16 @@ class Ui_MainWindow(object):
         
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 761, 22))
-        self.menubar.setObjectName("menubar")
+        
+        
+        # DODANIE GORNEGO MENU
+        self.SERIAL_MENU = self.menubar.addMenu("&SERIAL")
+        ## DODAWANIE FUNKCJI PODMENU
+        self.porty = Lista_portow.funkcja_zwrotu_portow()
+        self.akcja = []
+        for obiekt in self.porty:
+            self.akcja.append(self.SERIAL_MENU.addAction(obiekt))
+        
         
         MainWindow.setMenuBar(self.menubar)
         
@@ -121,7 +133,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
