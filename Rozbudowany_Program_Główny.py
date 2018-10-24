@@ -113,13 +113,10 @@ class Dodane_funkcje(GUI_DESIGNER.Ui_MainWindow):
 		self.Button_ON_Dioda1.setCheckable(False)
 		self.Button_ON_Dioda2.setCheckable(False) 
 		self.Button_ON_Dioda3.setCheckable(False)
-		
-	def test_gita(self):
-		print("GIT")
 			
 	def pomiar(self):
 		if self.stan_pomiar == 0:
-			self.timer.start(5000)
+			self.timer.start(1000)
 			self.stan_pomiar = 1
 		elif self.stan_pomiar == 1:
 			self.timer.stop()
