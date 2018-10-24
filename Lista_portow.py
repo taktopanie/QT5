@@ -31,6 +31,11 @@ def serial_ports():
             pass
     return result
 
+def funkcja_zwrotu_portow():
+	return serial_ports()
 
 if __name__ == '__main__':
     print(serial_ports())
+    funkcja_zwrotu_portow()
+
+

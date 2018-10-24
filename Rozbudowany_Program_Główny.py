@@ -143,8 +143,12 @@ class Dodane_funkcje(GUI_DESIGNER.Ui_MainWindow):
 		self.Button_ON_Dioda1.setCheckable(False)
 		self.Button_ON_Dioda2.setCheckable(False) 
 		self.Button_ON_Dioda3.setCheckable(False)
+<<<<<<< HEAD
 	
 	#metoda pomiaru
+=======
+			
+>>>>>>> 8a36c82cf1726592be779c0998b5e71fb455a216
 	def pomiar(self):
 		if self.stan_pomiar == 0:
 			self.timer.start(1000)
