@@ -1,13 +1,10 @@
 #rozbudowany moduł obsługi Aplikacju
 import GUI_DESIGNER
 import Lista_portow
-
 from functools import partial
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 import serial
-import time
+
 
 
 class Dodane_funkcje(GUI_DESIGNER.Ui_MainWindow):
@@ -27,9 +24,9 @@ class Dodane_funkcje(GUI_DESIGNER.Ui_MainWindow):
 		self.stan_checkButton = 1
 		self.stan_pomiar = 0
 		self.Kontrola_diod_check.clicked.connect(self.ustawienie_check)
-		#self.pushButton.clicked.connect(self.pomiar)
-		#self.timer = QtCore.QTimer()
-		#self.timer.timeout.connect(self.funkcja_timer)
+		self.pushButton.clicked.connect(self.pomiar)
+		self.timer = QtCore.QTimer()
+		self.timer.timeout.connect(self.funkcja_timer)
 	# Metoda tworząca port
 	def serial(self,wartosc):		
 		print("NOWE POLACZENIE Z PORTEM : "+self.porty[wartosc]+". ")
@@ -143,12 +140,9 @@ class Dodane_funkcje(GUI_DESIGNER.Ui_MainWindow):
 		self.Button_ON_Dioda1.setCheckable(False)
 		self.Button_ON_Dioda2.setCheckable(False) 
 		self.Button_ON_Dioda3.setCheckable(False)
-<<<<<<< HEAD
-	
+
 	#metoda pomiaru
-=======
-			
->>>>>>> 8a36c82cf1726592be779c0998b5e71fb455a216
+
 	def pomiar(self):
 		if self.stan_pomiar == 0:
 			self.timer.start(1000)
